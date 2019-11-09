@@ -1,0 +1,350 @@
+/* 1 Reset --------------------- */
+
+/* 2 Font ---------------------- */
+body{
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: normal;
+    color: #333;
+    font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+    background: #f2f2f2;
+}
+
+/* 3 Link ---------------------- */
+a:link, a:visited{
+    color:#999;
+    text-decoration: none;
+}
+a:hover, a:active{
+    color: #ccc;
+    text-decoration: none;
+}
+
+
+/* header ---------------------------- */
+header{
+    width: 100%;
+    height: 640px;
+    background: url(../img/main01.jpg) center center no-repeat;
+    background-size: cover; /* 背景画像の拡大縮小 */
+    position: relative; /* 相対配置 親の基点 */
+    opacity: 0;
+    animation-name: fade-in;
+    animation-duration: .8s;
+    animation-delay: .8s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    overflow: hidden;
+    z-index: 2;
+}
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+header h1{
+    width: 130px;
+    height: 130px;
+    background-color: #FFF;
+    text-align: center;
+    position: relative;; /* 絶対配置 子の座標指定 */
+    left: calc(50% - 65px);
+    top: calc(50% - 65px);
+    opacity: 0;
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    overflow: hidden;
+}
+header h1 img{
+    width: 100px;
+    height: auto;
+    margin-top: 30px;
+}
+
+header nav{
+    width: 100%;
+    height: 64px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, .8);
+    transform: translateY(64px);
+    animation-name: nav-up;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+@keyframes nav-up{
+    0%{
+        transform: translateY(64px);
+    }
+    100%{
+        transform: rotateY(0);
+    }
+}
+header nav .container{
+    width: 1140px;
+    height: 64px;
+    margin: 0 auto;
+    display: flex;
+    /* justify-content: space-between; */
+}
+header nav h2{
+    width: 60px;
+    height: 37px;
+    margin-top: 14px;
+}
+header nav h2 img{
+    width: 60px;
+    height: auto;
+}
+header nav ul{
+    width: 460px;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+}
+header nav ul a{
+    display: block; /*リンク領域を広げる*/
+    line-height: 4.4;
+    height: 64px;
+    padding: 0 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #ccc;
+    font-size: 15px;
+    letter-spacing: .1rem;
+}
+header nav ul li.current a{
+    border-bottom: 2px solid #ccc;
+    box-sizing: border-box; /* paddingとborderがwidthとheightに含まれる */
+    color: #ccc;
+}
+
+/* loader ---------------------------- */
+.loader-container{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: calc(50% - 20px);
+    /* top: calc(50% - 20px); */
+    top: 300px;
+    z-index: 1;
+}
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  background-color: #333;
+
+  border-radius: 100%;
+  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% { -webkit-transform: scale(0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 100% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+/* works ------------------------*/
+#works{
+    width: 100%;
+    padding: 80px 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+#works h2{
+    font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .1rem;
+}
+.sub-copy{
+    font-size: 16px;
+    margin-bottom: 64px;
+}
+#works .container{
+    width: 100%;
+    height: 468px;
+    display: flex;
+}
+#works section{
+    width: 468px;
+    height: 468px;
+    background-size: cover;
+    flex-grow: 1;
+}
+#graphic{
+    background: url(../img/works01.jpg) center center no-repeat;
+}
+#signage-vr{
+    background: url(../img/works02.png) center center no-repeat;
+}
+#ui-ux{
+    background: url(../img/works03.png) center center no-repeat;
+}
+#works h3{
+    font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    margin-top: 216px;
+    text-shadow: 0 2px 4px rgba(0,0,0,.5);
+}
+.btn{
+    width: 268px;
+    height: 44px;
+    margin: 64px auto 0;
+}
+.btn a{
+    display: block;
+    width: 268px;
+    height: 44px;
+    background-color: rgba(68,68,68,1);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: .1rem;
+    line-height: 2.8;
+    transition: all 1s ease-out;
+}
+.btn a:hover{
+    background-color: rgba(255,68,68,.6);
+}
+.btn a i{
+    transform: translate(0,7px);
+    transition: all 1s ease-out;
+    /* transform: translate(20px, 10px); */
+}
+.btn a:hover i{
+    transform: translate(30px, 7px);
+    transition: all .1s ease-out;
+}
+
+/* news ------------------------*/
+#news{
+    width: 100%;
+    padding: 80px 0;
+    text-align: center;
+    background-color: #e6e6e6;
+}
+#news h2{
+    font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .1rem;
+}
+#news .container{
+    width: 1140px;
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+#news article{
+    width: 360px;
+    width: 31.5789%;
+    height: 420px;
+    background-color: #fff;
+    text-align: left;
+}
+#news article img{
+    width: 100%;
+}
+.news-data{
+    padding: 16px;
+    display: flex;
+}
+.news-data time{
+    font-size: 12px;
+    color: #666;
+    letter-spacing: .1rem;
+}
+.news-catgory{
+    width: 90px;
+    background-color: #a0a0a0;
+    color: #fff;
+    font-size: 11px;
+    border-radius: 3px;
+    text-align: center;
+    letter-spacing: .1rem;
+    margin-left: auto;
+}
+.news-catgory-Seminar{
+    background-color: #17d8e6;
+}
+.news-catgory-media{
+    background-color: #e69a17;
+}
+#news h3{
+    padding: 16px;
+    font-size: 13px;
+}
+
+/* footer ------------------------*/
+footer{
+    width: 100%;
+    padding: 80px 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+footer h1 img{
+    width: 80px;
+    height: auto;
+}
+footer nav{
+    padding: 64px 0;
+    letter-spacing: .1rem;
+}
+.footer-nav-global{
+    width: 320px;
+    margin: 0 auto 24px;
+    font-family: 'Montserrat', san-serif;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-nav-sns{
+    width: 60px;
+    margin: 0 auto;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: space-between;
+}
+footer address{
+    color: #666;
+    font-size: 13px;
+    line-height: 2;
+    margin-bottom: 64px;
+}
+footer p small{
+    font-size: 11px;
+    color: #666;
+    letter-spacing: .1rem;
+}
